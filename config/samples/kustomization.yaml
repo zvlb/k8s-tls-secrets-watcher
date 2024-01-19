@@ -1,0 +1,4 @@
+## Append samples of your project ##
+resources:
+- tlswatcher_v1alpha1_reciever.yaml
+#+kubebuilder:scaffold:manifestskustomizesamples

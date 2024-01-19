@@ -1,0 +1,31 @@
+# permissions for end users to edit recievers.
+apiVersion: rbac.authorization.k8s.io/v1
+kind: ClusterRole
+metadata:
+  labels:
+    app.kubernetes.io/name: clusterrole
+    app.kubernetes.io/instance: reciever-editor-role
+    app.kubernetes.io/component: rbac
+    app.kubernetes.io/created-by: k8s-tls-secrets-watcher
+    app.kubernetes.io/part-of: k8s-tls-secrets-watcher
+    app.kubernetes.io/managed-by: kustomize
+  name: reciever-editor-role
+rules:
+- apiGroups:
+  - tlswatcher.zvlb.github.io
+  resources:
+  - recievers
+  verbs:
+  - create
+  - delete
+  - get
+  - list
+  - patch
+  - update
+  - watch
+- apiGroups:
+  - tlswatcher.zvlb.github.io
+  resources:
+  - recievers/status
+  verbs:
+  - get
