@@ -17,7 +17,7 @@ resources:
   controller: true
   domain: zvlb.github.io
   group: tlswatcher
-  kind: Reciever
+  kind: SlackReciever
   path: github.com/zvlb/k8s-tls-secrets-watcher/api/v1alpha1
   version: v1alpha1
 version: "3"

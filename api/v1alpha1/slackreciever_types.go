@@ -23,17 +23,17 @@ import (
 // EDIT THIS FILE!  THIS IS SCAFFOLDING FOR YOU TO OWN!
 // NOTE: json tags are required.  Any new fields you add must have json tags for the fields to be serialized.
 
-// RecieverSpec defines the desired state of Reciever
-type RecieverSpec struct {
+// SlackRecieverSpec defines the desired state of SlackReciever
+type SlackRecieverSpec struct {
 	// INSERT ADDITIONAL SPEC FIELDS - desired state of cluster
 	// Important: Run "make" to regenerate code after modifying this file
 
-	// Foo is an example field of Reciever. Edit reciever_types.go to remove/update
+	// Foo is an example field of SlackReciever. Edit slackreciever_types.go to remove/update
 	Foo string `json:"foo,omitempty"`
 }
 
-// RecieverStatus defines the observed state of Reciever
-type RecieverStatus struct {
+// SlackRecieverStatus defines the observed state of SlackReciever
+type SlackRecieverStatus struct {
 	// INSERT ADDITIONAL STATUS FIELD - define observed state of cluster
 	// Important: Run "make" to regenerate code after modifying this file
 }
@@ -41,24 +41,24 @@ type RecieverStatus struct {
 //+kubebuilder:object:root=true
 //+kubebuilder:subresource:status
 
-// Reciever is the Schema for the recievers API
-type Reciever struct {
+// SlackReciever is the Schema for the slackrecievers API
+type SlackReciever struct {
 	metav1.TypeMeta   `json:",inline"`
 	metav1.ObjectMeta `json:"metadata,omitempty"`
 
-	Spec   RecieverSpec   `json:"spec,omitempty"`
-	Status RecieverStatus `json:"status,omitempty"`
+	Spec   SlackRecieverSpec   `json:"spec,omitempty"`
+	Status SlackRecieverStatus `json:"status,omitempty"`
 }
 
 //+kubebuilder:object:root=true
 
-// RecieverList contains a list of Reciever
-type RecieverList struct {
+// SlackRecieverList contains a list of SlackReciever
+type SlackRecieverList struct {
 	metav1.TypeMeta `json:",inline"`
 	metav1.ListMeta `json:"metadata,omitempty"`
-	Items           []Reciever `json:"items"`
+	Items           []SlackReciever `json:"items"`
 }
 
 func init() {
-	SchemeBuilder.Register(&Reciever{}, &RecieverList{})
+	SchemeBuilder.Register(&SlackReciever{}, &SlackRecieverList{})
 }

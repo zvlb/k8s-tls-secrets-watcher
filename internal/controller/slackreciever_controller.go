@@ -27,26 +27,26 @@ import (
 	tlswatcherv1alpha1 "github.com/zvlb/k8s-tls-secrets-watcher/api/v1alpha1"
 )
 
-// RecieverReconciler reconciles a Reciever object
-type RecieverReconciler struct {
+// SlackRecieverReconciler reconciles a SlackReciever object
+type SlackRecieverReconciler struct {
 	client.Client
 	Scheme *runtime.Scheme
 }
 
-//+kubebuilder:rbac:groups=tlswatcher.zvlb.github.io,resources=recievers,verbs=get;list;watch;create;update;patch;delete
-//+kubebuilder:rbac:groups=tlswatcher.zvlb.github.io,resources=recievers/status,verbs=get;update;patch
-//+kubebuilder:rbac:groups=tlswatcher.zvlb.github.io,resources=recievers/finalizers,verbs=update
+//+kubebuilder:rbac:groups=tlswatcher.zvlb.github.io,resources=slackrecievers,verbs=get;list;watch;create;update;patch;delete
+//+kubebuilder:rbac:groups=tlswatcher.zvlb.github.io,resources=slackrecievers/status,verbs=get;update;patch
+//+kubebuilder:rbac:groups=tlswatcher.zvlb.github.io,resources=slackrecievers/finalizers,verbs=update
 
 // Reconcile is part of the main kubernetes reconciliation loop which aims to
 // move the current state of the cluster closer to the desired state.
 // TODO(user): Modify the Reconcile function to compare the state specified by
-// the Reciever object against the actual cluster state, and then
+// the SlackReciever object against the actual cluster state, and then
 // perform operations to make the cluster state reflect the state specified by
 // the user.
 //
 // For more details, check Reconcile and its Result here:
 // - https://pkg.go.dev/sigs.k8s.io/controller-runtime@v0.15.0/pkg/reconcile
-func (r *RecieverReconciler) Reconcile(ctx context.Context, req ctrl.Request) (ctrl.Result, error) {
+func (r *SlackRecieverReconciler) Reconcile(ctx context.Context, req ctrl.Request) (ctrl.Result, error) {
 	_ = log.FromContext(ctx)
 
 	// TODO(user): your logic here
@@ -55,8 +55,8 @@ func (r *RecieverReconciler) Reconcile(ctx context.Context, req ctrl.Request) (c
 }
 
 // SetupWithManager sets up the controller with the Manager.
-func (r *RecieverReconciler) SetupWithManager(mgr ctrl.Manager) error {
+func (r *SlackRecieverReconciler) SetupWithManager(mgr ctrl.Manager) error {
 	return ctrl.NewControllerManagedBy(mgr).
-		For(&tlswatcherv1alpha1.Reciever{}).
+		For(&tlswatcherv1alpha1.SlackReciever{}).
 		Complete(r)
 }

@@ -1,20 +1,20 @@
-# permissions for end users to view recievers.
+# permissions for end users to view slackrecievers.
 apiVersion: rbac.authorization.k8s.io/v1
 kind: ClusterRole
 metadata:
   labels:
     app.kubernetes.io/name: clusterrole
-    app.kubernetes.io/instance: reciever-viewer-role
+    app.kubernetes.io/instance: slackreciever-viewer-role
     app.kubernetes.io/component: rbac
     app.kubernetes.io/created-by: k8s-tls-secrets-watcher
     app.kubernetes.io/part-of: k8s-tls-secrets-watcher
     app.kubernetes.io/managed-by: kustomize
-  name: reciever-viewer-role
+  name: slackreciever-viewer-role
 rules:
 - apiGroups:
   - tlswatcher.zvlb.github.io
   resources:
-  - recievers
+  - slackrecievers
   verbs:
   - get
   - list
@@ -22,6 +22,6 @@ rules:
 - apiGroups:
   - tlswatcher.zvlb.github.io
   resources:
-  - recievers/status
+  - slackrecievers/status
   verbs:
   - get

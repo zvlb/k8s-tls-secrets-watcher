@@ -1,0 +1,52 @@
+---
+apiVersion: rbac.authorization.k8s.io/v1
+kind: ClusterRole
+metadata:
+  name: manager-role
+rules:
+- resources:
+  - secrets
+  verbs:
+  - create
+  - delete
+  - get
+  - list
+  - patch
+  - update
+  - watch
+- resources:
+  - secrets/finalizers
+  verbs:
+  - update
+- resources:
+  - secrets/status
+  verbs:
+  - get
+  - patch
+  - update
+- apiGroups:
+  - tlswatcher.zvlb.github.io
+  resources:
+  - slackrecievers
+  verbs:
+  - create
+  - delete
+  - get
+  - list
+  - patch
+  - update
+  - watch
+- apiGroups:
+  - tlswatcher.zvlb.github.io
+  resources:
+  - slackrecievers/finalizers
+  verbs:
+  - update
+- apiGroups:
+  - tlswatcher.zvlb.github.io
+  resources:
+  - slackrecievers/status
+  verbs:
+  - get
+  - patch
+  - update

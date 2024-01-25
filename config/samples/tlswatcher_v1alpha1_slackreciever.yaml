@@ -1,12 +1,12 @@
 apiVersion: tlswatcher.zvlb.github.io/v1alpha1
-kind: Reciever
+kind: SlackReciever
 metadata:
   labels:
-    app.kubernetes.io/name: reciever
-    app.kubernetes.io/instance: reciever-sample
+    app.kubernetes.io/name: slackreciever
+    app.kubernetes.io/instance: slackreciever-sample
     app.kubernetes.io/part-of: k8s-tls-secrets-watcher
     app.kubernetes.io/managed-by: kustomize
     app.kubernetes.io/created-by: k8s-tls-secrets-watcher
-  name: reciever-sample
+  name: slackreciever-sample
 spec:
   # TODO(user): Add fields here
